@@ -28,10 +28,12 @@ public class ComponentPool<T> : MonoBehaviour where T : MonoBehaviour
 				if (!b.gameObject.activeSelf)
 				{
 					b.gameObject.SetActive(true);
+					return b;
 				}
 			}
 			var newInstance = Instantiate(desired);
 			prefabPool.Add(newInstance);
+			newInstance.transform.parent = gameObject.transform;
 			return newInstance;
 		}
 		throw new Exception("No such prefab!");
