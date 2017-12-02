@@ -60,3 +60,11 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(baddie, transform.position, transform.rotation);
     }
 }
+
+[System.Serializable]
+public class Wave
+{
+    public Transform baddie;
+    public int amount;
+    public float rate;
+}
