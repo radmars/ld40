@@ -18,7 +18,6 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-
         if(state == SpawnState.WAITING)
         {
             return;
@@ -44,6 +43,11 @@ public class WaveSpawner : MonoBehaviour
         for(int i = 0; i< wave.amount; i++)
         {
             SpawnBaddie(wave.baddie);
+
+            // When last baddie spawns
+            if (i == wave.amount - 1)
+                state = SpawnState.COUNTING;
+
             yield return new WaitForSeconds(1f / wave.rate);
         }
 
