@@ -1634,6 +1634,9 @@ MonoBehaviour:
   - baddie: {fileID: 646324072}
     amount: 2
     rate: 1
+  - baddie: {fileID: 646324072}
+    amount: 4
+    rate: 5
   timeBetweenWaves: 5
   waveCountDown: 5
 --- !u!4 &1538970594

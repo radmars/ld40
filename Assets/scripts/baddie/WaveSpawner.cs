@@ -25,10 +25,13 @@ public class WaveSpawner : MonoBehaviour
 
         if (waveCountDown <= 0)
         {
-            if(state != SpawnState.SPAWNING)
+            // If it's spawning or there are no more waves, just return
+            if(state == SpawnState.SPAWNING || waves.Length == nextWave)
             {
-                StartCoroutine(SpawnWave(waves[nextWave]));
+                return;
             }
+
+            StartCoroutine(SpawnWave(waves[nextWave]));
         }
         else
         {
@@ -46,7 +49,11 @@ public class WaveSpawner : MonoBehaviour
 
             // When last baddie spawns
             if (i == wave.amount - 1)
+            {
                 state = SpawnState.COUNTING;
+                waveCountDown = timeBetweenWaves;
+                nextWave++;
+            }
 
             yield return new WaitForSeconds(1f / wave.rate);
         }
