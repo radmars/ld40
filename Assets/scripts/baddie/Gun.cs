@@ -12,6 +12,12 @@ public class Gun : Baddie {
 	{
 	}
 
+	void Attach()
+	{
+		base.Attach();
+		GetComponent<Rigidbody>().isKinematic = true;
+	}
+
 	public void Update()
 	{
 		if(lastShot + .5 < Time.time)
