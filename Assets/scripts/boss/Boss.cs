@@ -22,6 +22,15 @@ public class Boss : MonoBehaviour
 		{
 			Debug.Log("BOss hit!!");
 			hitPoints--;
+			if(hitPoints <= 0 )
+			{
+				Die();
+			}
 		}
+	}
+
+	public void Die()
+	{
+		gameObject.SetActive(false);
 	}
 }

@@ -626,9 +626,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planeGeometry: {fileID: 1306744311550920}
   livesText: {fileID: 0}
+  lives: 3
   tether: {fileID: 1116458230150024}
   theBall: {fileID: 114448660046451912}
-  lives: 3
 --- !u!231 &231106893629093782
 SpringJoint2D:
   m_ObjectHideFlags: 1

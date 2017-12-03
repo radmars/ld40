@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232094472288188}
   - component: {fileID: 95596280454933950}
+  - component: {fileID: 114693357473776688}
   m_Layer: 0
   m_Name: weird_boi2
   m_TagString: Untagged
@@ -219,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 1264178234741614}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3.19}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4659858401350554}
   - {fileID: 4732884716719368}
@@ -326,7 +327,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170210121559254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 6.7, z: 0}
+  m_LocalPosition: {x: 0.09, y: 4.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4552077283165664}
@@ -448,6 +449,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114693357473776688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264178234741614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8654d9944ea7d4595c887edc1b33b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bones:
+  - {fileID: 1946187407469326}
 --- !u!114 &114770210448600784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785ea2ef5e76dec488f582df9b6cf251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 0
+  hitPoints: 5
   theBall: {fileID: 0}
   sceneWeakSpots:
   - {fileID: 61149884305416788}

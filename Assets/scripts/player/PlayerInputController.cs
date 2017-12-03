@@ -32,6 +32,6 @@ public class PlayerInputController : MonoBehaviour
 
     public void SetLivesText()
     {
-        livesText.text = "x " + lives;
+        livesText.text = "X " + lives;
     }
 }
