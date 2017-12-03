@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 50414436011552232}
   - component: {fileID: 114709984878130222}
   - component: {fileID: 61365683375162544}
-  - component: {fileID: 232670172326197798}
+  - component: {fileID: 231106893629093782}
   m_Layer: 16
   m_Name: Plane
   m_TagString: Untagged
@@ -523,8 +523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planeGeometry: {fileID: 1306744311550920}
---- !u!232 &232670172326197798
-DistanceJoint2D:
+--- !u!231 &231106893629093782
+SpringJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -540,4 +540,5 @@ DistanceJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 1.88
-  m_MaxDistanceOnly: 0
+  m_DampingRatio: 0
+  m_Frequency: 1
