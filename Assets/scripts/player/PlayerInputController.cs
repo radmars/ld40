@@ -9,6 +9,8 @@ public class PlayerInputController : MonoBehaviour
 	public GameObject planeGeometry;
     public Text livesText;
     public int lives;
+	public GameObject tether;
+	public Ball theBall;
 
 	// Use this for initialization
 	void Start()
@@ -23,6 +25,7 @@ public class PlayerInputController : MonoBehaviour
 		var inputDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		body.AddForce(inputDirection, ForceMode2D.Impulse);
 		planeGeometry.transform.rotation = Quaternion.Euler(new Vector3(-90, body.velocity.x * -3, 0));
+		tether.transform.up = tether.transform.position - theBall.transform.position;
 
         //TODO: get hit lose lives
 	}
