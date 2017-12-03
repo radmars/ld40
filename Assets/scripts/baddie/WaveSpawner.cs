@@ -64,16 +64,15 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnBaddie(Wave wave)
     {
-        //TODO (find more machine effecient way to do this)
-		var moveScript = wave.baddie.GetComponent<RailMover>();
-        moveScript.rail = wave.Rail;
-
-		if (moveScript != null)
+		var newBaddie = baddiePool.GetInstance(wave.baddie);
+		var moveScript = newBaddie.Mover;
+		if (moveScript)
+		{
+			moveScript.rail = wave.Rail;
 			moveScript.isCompleted = false;
-
-		// TODO: Replace with pulling from baddie pool
-		baddiePool.GetInstance(wave.baddie);
-    }
+			moveScript.Update();
+		}
+	}
 }
 
 [System.Serializable]

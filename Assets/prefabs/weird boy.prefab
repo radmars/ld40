@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4713091819027380}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4914659787067290}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4560411329982630}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4737252322721322}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4170989530305406}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4290975362906944}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4740863937207856}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4208302888826990}
   - component: {fileID: 137527237126357316}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: creature1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4868521313196946}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4970908333273006}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4608807243985376}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4664684326132976}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428006207756384}
   - component: {fileID: 95188410607067204}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: weird_boi1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4197018649693482}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bone004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 61724856579180482}
   - component: {fileID: 114264515567043212}
   m_Layer: 14
-  m_Name: Turret
+  m_Name: weird boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +291,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1899205940698660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5639174, y: 4.0701413, z: 0}
+  m_LocalPosition: {x: 3.79, y: 7.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4428006207756384}
@@ -320,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 1664325752707424}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_Children:
   - {fileID: 4713091819027380}
   - {fileID: 4208302888826990}
@@ -484,7 +484,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.51}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -495,7 +495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.33}
+  m_Size: {x: 0.63, y: 1.05}
   m_EdgeRadius: 0
 --- !u!95 &95188410607067204
 Animator:

@@ -23,9 +23,7 @@ public class RailMover : MonoBehaviour
 
     public bool grounded;
 
-
-
-    private void Update()
+    public void Update()
     {
         if (!rail)
             return;
