@@ -3,59 +3,67 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
-	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 	public BaddiePool baddiePool;
+	public BossPool bossPool;
 
 	public Wave[] waves;
-	private int nextWave = 0;
 	public float timeBetweenWaves = 5f;
-	public float waveCountDown = 0f;
-	private SpawnState state = SpawnState.COUNTING;
 	public int currentLevel = 1;
+	public int waveCountRemaining = 10;
+	public int bossesPerLevel = 3;
 
 	void Start()
-    {
-        waveCountDown = timeBetweenWaves;
-		foreach(var wave in waves)
+	{
+		foreach (var wave in waves)
 		{
 			wave.gameObject.SetActive(true);
 		}
-    }
+		StartCoroutine(SpawnWaves());
+	}
 
-    void Update()
-    {
-        if (state == SpawnState.WAITING)
-        {
-            return;
-        }
+	private IEnumerator SpawnWaves()
+	{
+		yield return new WaitUntil(() =>
+		{
+			foreach (var wave in waves)
+			{
+				if (!wave.HasRails())
+				{
+					return false;
+				}
+			}
+			return true;
+		});
 
-        if (waveCountDown <= 0)
-        {
-            // If it's spawning or there are no more waves, just return
-            if (state == SpawnState.SPAWNING || waves.Length == nextWave)
-            {
-				Debug.Log("Spawning? " + (SpawnState.SPAWNING == state));
-                return;
-            }
+		while (gameObject.activeSelf)
+		{
+			if (waveCountRemaining-- > 0)
+			{
+				int index = Random.Range(0, waves.Length);
+				StartCoroutine(SpawnWave(waves[index]));
+			}
+			else
+			{
+				var boss = RunBossEncounter();
+				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
+				waveCountRemaining = 10;
+			}
+			yield return new WaitForSeconds(timeBetweenWaves);
+		}
+	}
 
-			Debug.Log("Spawning?");
-            StartCoroutine(SpawnWave(waves[nextWave]));
-        }
-        else
-        {
-            waveCountDown -= Time.deltaTime;
-        }
-    }
+	private Boss RunBossEncounter()
+	{
+		var newBoss = bossPool.GetRandom();
+		newBoss.StartAttack();
+		return newBoss;
+	}
 
 	IEnumerator SpawnWave(Wave wave)
 	{
-		state = SpawnState.SPAWNING;
-		foreach(var result in wave.Spawn(baddiePool))
+		foreach (var result in wave.Spawn(baddiePool))
 		{
 			yield return result;
 		}
-		state = SpawnState.COUNTING;
-		waveCountDown = timeBetweenWaves;
-		nextWave++;
 	}
 }

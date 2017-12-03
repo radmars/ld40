@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,24 +12,24 @@ public class Boss : MonoBehaviour
 	public Ball theBall;
     public Text bossName;
     public Slider healthSlider;
+	public int startingHitPoints;
 
 	protected List<Collider2D> weakSpots;
 
 	public void Start()
 	{
 		weakSpots = new List<Collider2D>();
-        healthSlider.maxValue = hitPoints;
-        healthSlider.value = hitPoints;
+		healthSlider.maxValue = startingHitPoints;
+		healthSlider.value = hitPoints;
 	}
 
 	public void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.collider.gameObject == theBall.gameObject)
 		{
-			Debug.Log("BOss hit!!");
 			hitPoints--;
-            healthSlider.value = hitPoints;
-			if(hitPoints <= 0 )
+			healthSlider.value = hitPoints;
+			if (hitPoints <= 0 )
 			{
 				Die();
 			}
@@ -39,6 +40,27 @@ public class Boss : MonoBehaviour
 	{
 		gameObject.SetActive(false);
 		healthSlider.gameObject.SetActive(false);
-        bossName.gameObject.SetActive(false);
+		bossName.gameObject.SetActive(false);
+	}
+
+	internal void StartAttack()
+	{
+		hitPoints = startingHitPoints;
+		StartCoroutine(SlideIn());
+	}
+
+	private IEnumerator SlideIn()
+	{
+		var start = new Vector3(0, 6, 0);
+		var end = new Vector3(0, 2.8f, 0);
+		float startTime = Time.time;
+		float slideTime = 10f;
+
+		yield return new WaitUntil(() =>
+		{
+			float t = (Time.time - startTime) / slideTime;
+			transform.position = Vector3.Lerp(start, end, t);
+			return t >= 1.0f;
+		});
 	}
 }

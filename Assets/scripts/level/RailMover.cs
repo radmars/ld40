@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class RailMover : MonoBehaviour
 {
@@ -34,7 +35,15 @@ public class RailMover : MonoBehaviour
             Play();
     }
 
-    private void Play(bool forward = true)
+	internal void Freshen(Rail rail)
+	{
+		currentSeg = 0;
+		this.rail = rail;
+		isCompleted = false;
+		Update();
+	}
+
+	private void Play(bool forward = true)
     {
         //calculate speed and stuff
         var temp = rail.nodes.Length;

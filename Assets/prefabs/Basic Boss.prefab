@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4048991735994026}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356521636099314}
   - component: {fileID: 61541260108916598}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hitbox 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4954037022502108}
   - component: {fileID: 50894396190811742}
   - component: {fileID: 114770210448600784}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Basic Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4732884716719368}
   - component: {fileID: 137161632716504204}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: creature2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4232094472288188}
   - component: {fileID: 95596280454933950}
   - component: {fileID: 114693357473776688}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: weird_boi2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4552077283165664}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Basic Boss Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4454689308001094}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922547581272466}
   - component: {fileID: 61436892115519650}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hitbox 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597646827303858}
   - component: {fileID: 61149884305416788}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hitbox 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4193056724542962}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4659858401350554}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bone017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264178234741614}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4659858401350554}
@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157474483819498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 0.58, z: -1.0400001}
+  m_LocalPosition: {x: -0.77, y: 3.1599998, z: -1.0400001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4954037022502108}
@@ -274,7 +274,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751581516840524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: -0.9700004}
+  m_LocalPosition: {x: 0.5, y: 2.58, z: -0.9700004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4954037022502108}
@@ -301,7 +301,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1191121656468830}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.672481, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232094472288188}
@@ -314,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721033670961194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -1.01, z: 0.88000023}
+  m_LocalPosition: {x: -0.09, y: 1.5699999, z: 0.88000023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4954037022502108}
@@ -326,8 +326,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170210121559254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 4.86, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4552077283165664}
@@ -477,6 +477,7 @@ MonoBehaviour:
   theBall: {fileID: 0}
   bossName: {fileID: 0}
   healthSlider: {fileID: 0}
+  startingHitPoints: 5
   sceneWeakSpots:
   - {fileID: 61149884305416788}
   - {fileID: 61541260108916598}

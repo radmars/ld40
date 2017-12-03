@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Wave : MonoBehaviour
@@ -20,14 +21,17 @@ public class Wave : MonoBehaviour
 			var moveScript = newBaddie.Mover;
 			if (moveScript)
 			{
-				moveScript.rail = rail;
-				moveScript.isCompleted = false;
-				moveScript.Update();
+				moveScript.Freshen(rail);
 			}
 			if (rate > 0)
 			{
 				yield return new WaitForSeconds(1f / rate);
 			}
 		}
+	}
+
+	internal bool HasRails()
+	{
+		return rails != null;
 	}
 }
