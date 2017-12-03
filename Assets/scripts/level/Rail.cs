@@ -22,6 +22,7 @@ public class Rail : MonoBehaviour
         for(int i = 0; i< nodes.Length-1; i++)
         {
             nodes[i].transform.LookAt(nodes[i+1]);
+            nodes[i].transform.rotation = new Quaternion(nodes[i].transform.rotation.x, nodes[i].transform.rotation.y, 0f, 0f);
         }
     }
 
