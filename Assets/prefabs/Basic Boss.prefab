@@ -475,6 +475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 5
   theBall: {fileID: 0}
+  bossName: {fileID: 0}
+  healthSlider: {fileID: 0}
   sceneWeakSpots:
   - {fileID: 61149884305416788}
   - {fileID: 61541260108916598}
