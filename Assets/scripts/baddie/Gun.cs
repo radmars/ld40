@@ -26,8 +26,10 @@ public class Gun : Baddie
 
 	public void Shoot()
 	{
-        if (this.Mover.isCompleted)
-            return;
+        if (this.Mover.finishedRoute)
+        {
+            this.gameObject.SetActive(false);
+        }
 
 		if (bulletPool == null)
 		{

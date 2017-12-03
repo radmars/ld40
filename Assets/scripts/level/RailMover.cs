@@ -21,6 +21,8 @@ public class RailMover : MonoBehaviour
 
     public bool isCompleted;
 
+    public bool finishedRoute;
+
     public bool grounded;
 
     public void Update()
@@ -47,6 +49,7 @@ public class RailMover : MonoBehaviour
             //if we reached the end
             if (currentSeg == rail.nodes.Length - 1)
             {
+                finishedRoute = true;
                 isCompleted = true;
                 return;
             }
