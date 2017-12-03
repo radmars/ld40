@@ -108,15 +108,10 @@ public class Rail : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
-    public Quaternion Orientation(int seg, float ratio, bool isReversed)
+    public Quaternion Orientation(int seg, float ratio)
     {
         Quaternion q1 = nodes[seg].rotation;
-        Quaternion q2 = nodes[seg + 1].rotation;
-        
-          if(isReversed)
-        {
-            return Quaternion.Inverse(Quaternion.Lerp(q1, q2, ratio));
-        }
+        Quaternion q2 = nodes[seg + 1].rotation;                
 
         return Quaternion.Lerp(q1, q2, ratio);
     }

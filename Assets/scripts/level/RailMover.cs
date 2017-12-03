@@ -7,14 +7,10 @@ public class RailMover : MonoBehaviour
 
     public PlayMode mode;
 
-    public bool isReversed;
-
-    public bool isLooping;
-
     public bool returns;
 
     public float speed = 2.5f;
-    
+
     public float minSpeed = 2.5f;
 
     public float maxSpeed = 5f;
@@ -23,7 +19,7 @@ public class RailMover : MonoBehaviour
 
     private float transition;
 
-    private bool isCompleted;
+    public bool isCompleted;
 
     public bool grounded;
 
@@ -34,22 +30,8 @@ public class RailMover : MonoBehaviour
         if (!rail)
             return;
 
-        if (!isCompleted)
-            Play(!isReversed);
-
-        if(name == "Rover" && Input.GetButton("Fire2"))
-        { 
-            if(speed < maxSpeed)
-            {
-                speed += .1f;
-            }            
-        }
-        else{
-            if(speed >minSpeed)
-            {
-                speed -=0.1f;
-            }
-        }
+        if (!isCompleted && currentSeg < rail.nodes.Length - 1)
+            Play();
     }
 
     private void Play(bool forward = true)
@@ -67,26 +49,8 @@ public class RailMover : MonoBehaviour
             //if we reached the end
             if (currentSeg == rail.nodes.Length - 1)
             {
-                //if we're looping
-                if (isLooping)
-                {
-                    //if we comin home bby
-                    if(returns)
-                    {
-                        transition = 1;
-                        currentSeg = rail.nodes.Length -2;
-                        isReversed = !isReversed;
-                    }
-                    else{
-                        currentSeg=0;
-                    }
-                }
-                else
-                {
-                    isCompleted = true;
-                    return;
-                }
-
+                isCompleted = true;
+                return;
             }
         }
         else if (transition < 0)
@@ -96,27 +60,13 @@ public class RailMover : MonoBehaviour
 
             if (currentSeg == -1)
             {
-                if (isLooping)
-                {
-                    if(returns)
-                    {
-                        transition = 0;
-                        currentSeg = 0;
-                        isReversed = !isReversed;
-                    }
-                    else{
-                        currentSeg= rail.nodes.Length-2;
-                    }
-                }
-                else
-                {
-                    isCompleted = true;
-                    return;
-                }
+                isCompleted = true;
+                return;
+
             }
         }
 
         transform.position = rail.PositionOnRail(currentSeg, transition, mode, grounded);
-        transform.rotation = rail.Orientation(currentSeg, transition, isReversed);
+        transform.rotation = rail.Orientation(currentSeg, transition);
     }
 }

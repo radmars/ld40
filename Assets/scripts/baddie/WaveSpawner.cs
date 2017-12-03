@@ -18,7 +18,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if(state == SpawnState.WAITING)
+        if (state == SpawnState.WAITING)
         {
             return;
         }
@@ -26,7 +26,7 @@ public class WaveSpawner : MonoBehaviour
         if (waveCountDown <= 0)
         {
             // If it's spawning or there are no more waves, just return
-            if(state == SpawnState.SPAWNING || waves.Length == nextWave)
+            if (state == SpawnState.SPAWNING || waves.Length == nextWave)
             {
                 return;
             }
@@ -39,11 +39,11 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnWave (Wave wave)
-    { 
+    IEnumerator SpawnWave(Wave wave)
+    {
         state = SpawnState.SPAWNING;
 
-        for(int i = 0; i< wave.amount; i++)
+        for (int i = 0; i < wave.amount; i++)
         {
             SpawnBaddie(wave.baddie);
 
@@ -63,6 +63,15 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnBaddie(Transform baddie)
     {
+        //TODO (find more machine effecient way to do this)
+        foreach(Transform child in baddie)
+        {
+            var moveScript = child.GetComponent<RailMover>();
+
+            if (moveScript != null)
+                moveScript.isCompleted = false;
+        }
+
         // TODO: Replace with pulling from baddie pool
         Instantiate(baddie, transform.position, transform.rotation);
     }
