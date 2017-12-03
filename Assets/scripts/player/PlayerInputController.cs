@@ -18,6 +18,6 @@ public class PlayerInputController : MonoBehaviour
 	{
 		var inputDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		body.AddForce(inputDirection, ForceMode2D.Impulse);
-		transform.rotation = Quaternion.Euler(new Vector3(0, body.velocity.x * -3, 0));
+		planeGeometry.transform.rotation = Quaternion.Euler(new Vector3(-90, body.velocity.x * -3, 0));
 	}
 }
