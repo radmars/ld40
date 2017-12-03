@@ -29,6 +29,11 @@ public class Gun : Baddie {
 
 	public void Shoot()
 	{
+        if(bulletPool == null)
+        {
+           bulletPool = GameObject.FindObjectOfType<BulletPool>();
+        }
+
 		var bullet = bulletPool.GetInstance(bulletPrefab);
 		bullet.transform.position = transform.position;
 		// TODO: Should probably inject different logics here, for now shoot straight at our hero.
