@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a130e8967ecd9469e64526ccd03146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baddiePool: {fileID: 0}
+  baddiePool: {fileID: 1884515790}
   waves:
   - baddie: {fileID: 1802403063}
     amount: 2
