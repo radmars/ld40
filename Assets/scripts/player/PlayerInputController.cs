@@ -24,7 +24,7 @@ public class PlayerInputController : MonoBehaviour
 	{
 		var inputDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		body.AddForce(inputDirection, ForceMode2D.Impulse);
-		planeGeometry.transform.rotation = Quaternion.Euler(new Vector3(-90, body.velocity.x * -3, 0));
+		planeGeometry.transform.rotation = Quaternion.Euler(new Vector3(-90 + Mathf.Clamp(body.velocity.y  * 3, -10, 10), body.velocity.x * -3, 0));
 		tether.transform.up = tether.transform.position - theBall.transform.position;
 
         //TODO: get hit lose lives
