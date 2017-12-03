@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoringBoss : Boss {
+public class BoringBoss : Boss
+{
+	public Collider2D []sceneWeakSpots;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-
-	// Update is called once per frame
-	void Update () {
+	public new void Start()
+	{
+		base.Start();
 
 	}
 }

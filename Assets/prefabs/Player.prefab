@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4368359673236058}
   - component: {fileID: 95064891235006048}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: plane wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4419643173068728}
   - component: {fileID: 33503089188466716}
   - component: {fileID: 23263356139996392}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: wing_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4889179885093458}
   - component: {fileID: 33679749761666406}
   - component: {fileID: 23995714171698282}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4476302649712784}
   - component: {fileID: 33112669726348694}
   - component: {fileID: 23377614661771834}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: wing_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1007955285978856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4977758586552344}
