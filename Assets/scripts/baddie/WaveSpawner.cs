@@ -3,18 +3,23 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING };
+	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 	public BaddiePool baddiePool;
 
-    public Wave[] waves;
-    private int nextWave = 0;
-    public float timeBetweenWaves = 5f;
-    public float waveCountDown = 0f;
-    private SpawnState state = SpawnState.COUNTING;
+	public Wave[] waves;
+	private int nextWave = 0;
+	public float timeBetweenWaves = 5f;
+	public float waveCountDown = 0f;
+	private SpawnState state = SpawnState.COUNTING;
+	public int currentLevel = 1;
 
-    void Start()
+	void Start()
     {
         waveCountDown = timeBetweenWaves;
+		foreach(var wave in waves)
+		{
+			wave.gameObject.SetActive(true);
+		}
     }
 
     void Update()
@@ -29,9 +34,11 @@ public class WaveSpawner : MonoBehaviour
             // If it's spawning or there are no more waves, just return
             if (state == SpawnState.SPAWNING || waves.Length == nextWave)
             {
+				Debug.Log("Spawning? " + (SpawnState.SPAWNING == state));
                 return;
             }
 
+			Debug.Log("Spawning?");
             StartCoroutine(SpawnWave(waves[nextWave]));
         }
         else
@@ -40,46 +47,15 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnWave(Wave wave)
-    {
-        state = SpawnState.SPAWNING;
-
-        for (int i = 0; i < wave.amount; i++)
-        {
-            SpawnBaddie(wave);
-
-            // When last baddie spawns
-            if (i == wave.amount - 1)
-            {
-                state = SpawnState.COUNTING;
-                waveCountDown = timeBetweenWaves;
-                nextWave++;
-            }
-
-            yield return new WaitForSeconds(1f / wave.rate);
-        }
-
-        yield break;
-    }
-
-    void SpawnBaddie(Wave wave)
-    {
-		var newBaddie = baddiePool.GetInstance(wave.baddie);
-		var moveScript = newBaddie.Mover;
-		if (moveScript)
+	IEnumerator SpawnWave(Wave wave)
+	{
+		state = SpawnState.SPAWNING;
+		foreach(var result in wave.Spawn(baddiePool))
 		{
-			moveScript.rail = wave.Rail;
-			moveScript.isCompleted = false;
-			moveScript.Update();
+			yield return result;
 		}
+		state = SpawnState.COUNTING;
+		waveCountDown = timeBetweenWaves;
+		nextWave++;
 	}
-}
-
-[System.Serializable]
-public class Wave
-{
-    public Rail Rail;
-    public Baddie baddie;
-    public int amount;
-    public float rate;
 }
