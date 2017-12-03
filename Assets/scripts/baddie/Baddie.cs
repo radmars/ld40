@@ -31,7 +31,7 @@ public class Baddie : MonoBehaviour
 
 	public virtual void Attach()
 	{
-		var moveScript = this.GetComponent<RailMover>();
+		var moveScript = Mover;
 		if (moveScript != null)
 		{
 			moveScript.isCompleted = true; ;

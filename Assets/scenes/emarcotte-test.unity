@@ -567,7 +567,7 @@ Prefab:
     - target: {fileID: 224419933708866312, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 224031823804106830, guid: 90f77db789328c348bc032948596778f,
         type: 2}
@@ -5903,7 +5903,7 @@ MonoBehaviour:
   - {fileID: 385530642}
   timeBetweenWaves: 5
   currentLevel: 1
-  waveCountRemaining: 1
+  waveCountRemaining: 5
   bossesPerLevel: 3
 --- !u!4 &1538970594
 Transform:

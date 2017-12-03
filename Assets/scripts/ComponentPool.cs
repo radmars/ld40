@@ -46,9 +46,8 @@ public class ComponentPool<T> : MonoBehaviour where T : MonoBehaviour
 					return b;
 				}
 			}
-			var newInstance = Instantiate(desired);
+			var newInstance = Instantiate(desired, gameObject.transform);
 			prefabPool.Add(newInstance);
-			newInstance.transform.parent = gameObject.transform;
 			return newInstance;
 		}
 		throw new Exception("No such prefab!");
