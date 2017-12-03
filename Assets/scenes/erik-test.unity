@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &17331408 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114709984878130222, guid: 30e2b75bfacbd734a95eee15d04374e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 410938024}
+  m_Script: {fileID: 11500000, guid: c256cb7aca305064190ba790ff1b63ef, type: 3}
 --- !u!1 &23481850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1403,7 @@ Prefab:
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1622022215}
+      objectReference: {fileID: 17331408}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e1df42182923ca458c5068fc2daf02d, type: 2}
   m_IsPrefabParent: 0
@@ -1466,12 +1472,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1622022215 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114389979294796448, guid: 30e2b75bfacbd734a95eee15d04374e8,
-    type: 2}
-  m_PrefabInternal: {fileID: 410938024}
-  m_Script: {fileID: 11500000, guid: c256cb7aca305064190ba790ff1b63ef, type: 3}
 --- !u!1 &1657906027
 GameObject:
   m_ObjectHideFlags: 0

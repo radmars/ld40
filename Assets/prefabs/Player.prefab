@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c256cb7aca305064190ba790ff1b63ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planeGeometry: {fileID: 0}
+  planeGeometry: {fileID: 1306744311550920}
 --- !u!232 &232670172326197798
 DistanceJoint2D:
   m_ObjectHideFlags: 1
