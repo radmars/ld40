@@ -511,7 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c24b57cad882f84899d8c4f485101ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 114695439445321198, guid: 117cd163cce756542945685a0715917f,
+    type: 2}
 --- !u!114 &114709984878130222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,8 +525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planeGeometry: {fileID: 1306744311550920}
-  livesText: {fileID: 0}
-  lives: 0
+  livesText: {fileID: 114218378318075230, guid: 28ac3519ef27a904a8ce588e370a8bb1,
+    type: 2}
+  lives: 3
 --- !u!231 &231106893629093782
 SpringJoint2D:
   m_ObjectHideFlags: 1
