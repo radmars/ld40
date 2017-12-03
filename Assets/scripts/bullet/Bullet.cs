@@ -4,21 +4,19 @@ public class Bullet : MonoBehaviour
 {
 	public float speed;
 	public Vector3 direction;
-	public Rigidbody body;
+	public Rigidbody2D body;
 
 	public void Start()
 	{
-		body = GetComponent<Rigidbody>();
-		body.angularVelocity = Vector3.zero;
-		body.rotation = Quaternion.identity;
+		body = GetComponent<Rigidbody2D>();
+		body.angularVelocity = 0;
+		body.rotation = 0;
 		body.velocity = Vector3.zero;
 	}
 
-	private void OnCollisionEnter(Collision collision)
+	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		gameObject.SetActive(false);
-		body.rotation = Quaternion.identity;
-		body.velocity = Vector3.zero;
 	}
 
 	public void Update()

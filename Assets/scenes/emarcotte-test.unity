@@ -121,8 +121,8 @@ GameObject:
   m_Component:
   - component: {fileID: 23481853}
   - component: {fileID: 23481852}
-  - component: {fileID: 23481851}
   - component: {fileID: 23481854}
+  - component: {fileID: 23481851}
   m_Layer: 17
   m_Name: Top Stage Wall
   m_TagString: Untagged
@@ -130,18 +130,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &23481851
-BoxCollider:
+--- !u!61 &23481851
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23481850}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!33 &23481852
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -532,8 +545,8 @@ GameObject:
   m_Component:
   - component: {fileID: 374682118}
   - component: {fileID: 374682117}
-  - component: {fileID: 374682116}
   - component: {fileID: 374682115}
+  - component: {fileID: 374682116}
   m_Layer: 17
   m_Name: Left Stage Wall
   m_TagString: Untagged
@@ -575,18 +588,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &374682116
-BoxCollider:
+--- !u!61 &374682116
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 374682114}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!33 &374682117
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -670,19 +696,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4155054192918164, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155054192918164, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155054192918164, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155054192918164, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4155054192918164, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
       propertyPath: m_RootOrder
@@ -858,8 +884,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1145581202}
   - component: {fileID: 1145581201}
-  - component: {fileID: 1145581200}
   - component: {fileID: 1145581203}
+  - component: {fileID: 1145581200}
   m_Layer: 17
   m_Name: Right Stage Wall
   m_TagString: Untagged
@@ -867,18 +893,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1145581200
-BoxCollider:
+--- !u!61 &1145581200
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1145581199}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!33 &1145581201
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1026,8 +1065,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1565154909}
   - component: {fileID: 1565154908}
-  - component: {fileID: 1565154907}
   - component: {fileID: 1565154910}
+  - component: {fileID: 1565154907}
   m_Layer: 17
   m_Name: Bottom Stage Wall
   m_TagString: Untagged
@@ -1035,18 +1074,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1565154907
-BoxCollider:
+--- !u!61 &1565154907
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565154906}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!33 &1565154908
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1061,7 +1113,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565154906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4100001, y: -5.5, z: 0}
+  m_LocalPosition: {x: -0.4100001, y: -1.86, z: 0}
   m_LocalScale: {x: 8, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1140963591}

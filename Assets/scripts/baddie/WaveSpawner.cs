@@ -4,6 +4,7 @@ using System.Collections;
 public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
+	public BaddiePool baddiePool;
 
     public Wave[] waves;
     private int nextWave = 0;
@@ -61,26 +62,23 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnBaddie(Transform baddie)
+    void SpawnBaddie(Baddie baddie)
     {
         //TODO (find more machine effecient way to do this)
-        foreach(Transform child in baddie)
-        {
-            var moveScript = child.GetComponent<RailMover>();
+		var moveScript = baddie.GetComponent<RailMover>();
 
-            if (moveScript != null)
-                moveScript.isCompleted = false;
-        }
+		if (moveScript != null)
+			moveScript.isCompleted = false;
 
-        // TODO: Replace with pulling from baddie pool
-        Instantiate(baddie, transform.position, transform.rotation);
+		// TODO: Replace with pulling from baddie pool
+		baddiePool.GetInstance(baddie);
     }
 }
 
 [System.Serializable]
 public class Wave
 {
-    public Transform baddie;
+    public Baddie baddie;
     public int amount;
     public float rate;
 }

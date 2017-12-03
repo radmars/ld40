@@ -14,5 +14,6 @@ public class Ball : MonoBehaviour
 	{
 		attached.Add(b);
 		b.transform.parent = transform;
+		b.transform.position = b.transform.position;
 	}
 }

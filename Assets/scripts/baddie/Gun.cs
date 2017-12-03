@@ -12,10 +12,10 @@ public class Gun : Baddie {
 	{
 	}
 
-	void Attach()
+	public override void Attach()
 	{
 		base.Attach();
-		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody2D>().simulated = false;
 	}
 
 	public void Update()

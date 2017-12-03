@@ -1,3 +1,3 @@
-﻿public class BaddiePool : ComponentPool<Gun>
+﻿public class BaddiePool : ComponentPool<Baddie>
 {
 }
