@@ -21,8 +21,10 @@ GameObject:
   - component: {fileID: 4216890334929130}
   - component: {fileID: 212136620781876560}
   - component: {fileID: 114569699575166510}
+  - component: {fileID: 114978504360607940}
   - component: {fileID: 50328736554516978}
   - component: {fileID: 61724856579180482}
+  - component: {fileID: 114264515567043212}
   m_Layer: 14
   m_Name: Turret
   m_TagString: Untagged
@@ -88,6 +90,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.33}
   m_EdgeRadius: 0
+--- !u!114 &114264515567043212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899205940698660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c138e52d91d848e4e92fd54d5c54d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rail: {fileID: 0}
+  mode: 0
+  returns: 0
+  speed: 2.5
+  minSpeed: 2.5
+  maxSpeed: 5
+  isCompleted: 0
+  grounded: 0
 --- !u!114 &114569699575166510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,11 +120,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2625a071f85410f4d96f5a4a476a0d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theBall: {fileID: 0}
+  theBall: {fileID: 114448660046451912, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
   bulletPool: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  target: {fileID: 0}
+  bulletPrefab: {fileID: 114371924463302366, guid: 845c868359de27d4bbbe0dcbaf5f0335,
+    type: 2}
+  target: {fileID: 114389979294796448, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
   lastShot: 0
+--- !u!114 &114978504360607940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899205940698660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c138e52d91d848e4e92fd54d5c54d489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rail: {fileID: 0}
+  mode: 0
+  returns: 0
+  speed: 2.5
+  minSpeed: 2.5
+  maxSpeed: 5
+  isCompleted: 0
+  grounded: 0
 --- !u!212 &212136620781876560
 SpriteRenderer:
   m_ObjectHideFlags: 1

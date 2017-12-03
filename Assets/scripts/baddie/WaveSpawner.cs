@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < wave.amount; i++)
         {
-            SpawnBaddie(wave.baddie);
+            SpawnBaddie(wave);
 
             // When last baddie spawns
             if (i == wave.amount - 1)
@@ -62,22 +62,24 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnBaddie(Baddie baddie)
+    void SpawnBaddie(Wave wave)
     {
         //TODO (find more machine effecient way to do this)
-		var moveScript = baddie.GetComponent<RailMover>();
+		var moveScript = wave.baddie.GetComponent<RailMover>();
+        moveScript.rail = wave.Rail;
 
 		if (moveScript != null)
 			moveScript.isCompleted = false;
 
 		// TODO: Replace with pulling from baddie pool
-		baddiePool.GetInstance(baddie);
+		baddiePool.GetInstance(wave.baddie);
     }
 }
 
 [System.Serializable]
 public class Wave
 {
+    public Rail Rail;
     public Baddie baddie;
     public int amount;
     public float rate;
