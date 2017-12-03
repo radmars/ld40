@@ -26,6 +26,9 @@ public class Gun : Baddie
 
 	public void Shoot()
 	{
+        if (this.Mover.isCompleted)
+            return;
+
 		if (bulletPool == null)
 		{
 			bulletPool = GameObject.FindObjectOfType<BulletPool>();
