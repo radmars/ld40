@@ -20,6 +20,12 @@ public class Baddie : MonoBehaviour
 		}
 	}
 
+    public void Freshen()
+    {
+        this.GetComponent<Rigidbody2D>().simulated = true;
+        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), theBall.GetComponent<Collider2D>(), false);
+    }
+
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.collider.gameObject == theBall.gameObject)
@@ -37,6 +43,7 @@ public class Baddie : MonoBehaviour
 			moveScript.isStopped = true; ;
 		}
 
-		theBall.AttachBaddie(this);
+        GetComponent<Rigidbody2D>().simulated = false;
+        theBall.AttachBaddie(this);
 	}
 }

@@ -12,7 +12,6 @@ public class Gun : Baddie
 	public override void Attach()
 	{
 		base.Attach();
-		GetComponent<Rigidbody2D>().simulated = false;
 	}
 
 	public void Update()

@@ -22,6 +22,7 @@ public class Wave : MonoBehaviour
 			if (moveScript)
 			{
 				moveScript.Freshen(rail);
+                baddieToSpawn.Freshen();
 			}
 			if (rate > 0)
 			{
