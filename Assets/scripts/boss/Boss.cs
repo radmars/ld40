@@ -46,6 +46,7 @@ public class Boss : MonoBehaviour
 	internal void StartAttack()
 	{
 		hitPoints = startingHitPoints;
+        RefreshHealthBar();
 		StartCoroutine(SlideIn());
 	}
 
@@ -56,11 +57,19 @@ public class Boss : MonoBehaviour
 		float startTime = Time.time;
 		float slideTime = 10f;
 
-		yield return new WaitUntil(() =>
+        yield return new WaitUntil(() =>
 		{
 			float t = (Time.time - startTime) / slideTime;
 			transform.position = Vector3.Lerp(start, end, t);
 			return t >= 1.0f;
 		});
 	}
+
+    private void RefreshHealthBar()
+    {
+        healthSlider.gameObject.SetActive(true);
+        bossName.gameObject.SetActive(true);
+        healthSlider.maxValue = startingHitPoints;
+        healthSlider.value = hitPoints;
+    }
 }
