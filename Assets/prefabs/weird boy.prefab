@@ -546,6 +546,7 @@ MonoBehaviour:
   minSpeed: 2.5
   maxSpeed: 5
   isCompleted: 0
+  finishedRoute: 0
   grounded: 0
 --- !u!114 &114569699575166510
 MonoBehaviour:
@@ -581,6 +582,7 @@ MonoBehaviour:
   minSpeed: 2.5
   maxSpeed: 5
   isCompleted: 0
+  finishedRoute: 0
   grounded: 0
 --- !u!137 &137527237126357316
 SkinnedMeshRenderer:

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class RailMover : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class RailMover : MonoBehaviour
 
     private float transition;
 
-    public bool isCompleted;
+    public bool isStopped;
 
     public bool finishedRoute;
 
@@ -30,11 +31,20 @@ public class RailMover : MonoBehaviour
         if (!rail)
             return;
 
-        if (!isCompleted && currentSeg < rail.nodes.Length - 1)
+        if (!isStopped && currentSeg < rail.nodes.Length - 1)
             Play();
     }
 
-    private void Play(bool forward = true)
+	internal void Freshen(Rail rail)
+	{
+		currentSeg = 0;
+		this.rail = rail;
+		isStopped = false;
+        finishedRoute = false;
+		Update();
+	}
+
+	private void Play(bool forward = true)
     {
         //calculate speed and stuff
         var temp = rail.nodes.Length;
@@ -50,7 +60,7 @@ public class RailMover : MonoBehaviour
             if (currentSeg == rail.nodes.Length - 1)
             {
                 finishedRoute = true;
-                isCompleted = true;
+                isStopped = true;
                 return;
             }
         }
@@ -61,7 +71,7 @@ public class RailMover : MonoBehaviour
 
             if (currentSeg == -1)
             {
-                isCompleted = true;
+                isStopped = true;
                 return;
 
             }
