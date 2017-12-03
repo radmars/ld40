@@ -20,7 +20,7 @@ public class RailMover : MonoBehaviour
 
     private float transition;
 
-    public bool isCompleted;
+    public bool isStopped;
 
     public bool finishedRoute;
 
@@ -31,7 +31,7 @@ public class RailMover : MonoBehaviour
         if (!rail)
             return;
 
-        if (!isCompleted && currentSeg < rail.nodes.Length - 1)
+        if (!isStopped && currentSeg < rail.nodes.Length - 1)
             Play();
     }
 
@@ -39,7 +39,8 @@ public class RailMover : MonoBehaviour
 	{
 		currentSeg = 0;
 		this.rail = rail;
-		isCompleted = false;
+		isStopped = false;
+        finishedRoute = false;
 		Update();
 	}
 
@@ -59,7 +60,7 @@ public class RailMover : MonoBehaviour
             if (currentSeg == rail.nodes.Length - 1)
             {
                 finishedRoute = true;
-                isCompleted = true;
+                isStopped = true;
                 return;
             }
         }
@@ -70,7 +71,7 @@ public class RailMover : MonoBehaviour
 
             if (currentSeg == -1)
             {
-                isCompleted = true;
+                isStopped = true;
                 return;
 
             }

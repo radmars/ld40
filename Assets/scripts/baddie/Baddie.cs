@@ -34,7 +34,7 @@ public class Baddie : MonoBehaviour
 		var moveScript = this.GetComponent<RailMover>();
 		if (moveScript != null)
 		{
-			moveScript.isCompleted = true; ;
+			moveScript.isStopped = true; ;
 		}
 
 		theBall.AttachBaddie(this);
