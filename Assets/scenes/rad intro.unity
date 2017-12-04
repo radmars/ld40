@@ -521,7 +521,7 @@ MonoBehaviour:
   mars: {fileID: 21300000, guid: 394e2305f541b3844ba7671f5da27cff, type: 3}
   intro1: {fileID: 21300000, guid: b5c8d6ce301d2a74e8c87d574dd53c4b, type: 3}
   intro2: {fileID: 21300000, guid: dba61140b173fa546ada2688fe063efc, type: 3}
-  nextScene: emarcotte-test
+  nextScene: splash-menu
 --- !u!4 &661219570
 Transform:
   m_ObjectHideFlags: 0

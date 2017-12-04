@@ -117,7 +117,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4977758586552344}
-  - component: {fileID: 33780229016120030}
   - component: {fileID: 114448660046451912}
   - component: {fileID: 61193389507604760}
   - component: {fileID: 50010186518967380}
@@ -525,13 +524,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465915814184174}
   m_Mesh: {fileID: 4300000, guid: e42439ba9c1fddc408bc4566f1034f05, type: 3}
---- !u!33 &33780229016120030
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1536767948998910}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &50010186518967380
 Rigidbody2D:
   serializedVersion: 4
@@ -663,6 +655,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  massPerBaddie: 1
+  scalePerBaddie: 1.1
+  geometry: {fileID: 1179206288550612}
+  body: {fileID: 50010186518967380}
+  collider: {fileID: 61193389507604760}
 --- !u!114 &114709984878130222
 MonoBehaviour:
   m_ObjectHideFlags: 1
