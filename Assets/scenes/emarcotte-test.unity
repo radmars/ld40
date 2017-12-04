@@ -1709,7 +1709,34 @@ Prefab:
     - target: {fileID: 50010186518967380, guid: 30e2b75bfacbd734a95eee15d04374e8,
         type: 2}
       propertyPath: m_Mass
-      value: 0.5
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65064306986989290, guid: 30e2b75bfacbd734a95eee15d04374e8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65064306986989290, guid: 30e2b75bfacbd734a95eee15d04374e8,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65064306986989290, guid: 30e2b75bfacbd734a95eee15d04374e8,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589158608253550, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589158608253550, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589158608253550, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}

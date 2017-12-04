@@ -7,7 +7,7 @@ public class Gun : Baddie
 	public BulletPool bulletPool;
 	public Bullet bulletPrefab;
 	public PlayerInputController target;
-	public float rateOfFire = 1.5f;
+	public float rateOfFire = 2f;
 	public float lastShot = 0;
     public AudioSource audioSource;
 
