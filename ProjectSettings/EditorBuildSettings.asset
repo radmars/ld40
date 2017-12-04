@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/emarcotte-test.unity
     guid: dd48ffde71c090647afcb2ed3bc14d93
+  - enabled: 1
+    path: Assets/scenes/splash-menu.unity
+    guid: a04b436e0036832469339d1d348ca652
