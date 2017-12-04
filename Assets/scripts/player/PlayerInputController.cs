@@ -36,6 +36,7 @@ public class PlayerInputController : MonoBehaviour
 		}
 
 		var inputDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+		inputDirection = Vector3.Scale (inputDirection, new Vector3 (1.2f, 1.2f, 1.2f));
 		body.AddForce(inputDirection, ForceMode2D.Impulse);
 		planeGeometry.transform.rotation = Quaternion.Euler(new Vector3(-90 + Mathf.Clamp(body.velocity.y  * 3, -10, 10), body.velocity.x * -3, 0));
 		tether.transform.up = tether.transform.position - theBall.transform.position;
