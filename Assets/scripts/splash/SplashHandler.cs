@@ -8,17 +8,21 @@ public class SplashHandler : MonoBehaviour
 {
 	public string nextScene;
     public AudioSource titleSound;
+    public AudioSource titleBoom;
+    private bool pressed = false;
 
 	void Update()
 	{
-		if (Input.anyKey)
+		if (Input.anyKey && !pressed)
 		{
             StartCoroutine(StartGame());
+            pressed = true;
 		}
 	}
 
     private IEnumerator StartGame() {
-        titleSound.Play();
+        titleBoom.Play();
+        titleSound.Play(40000);
 
         while (titleSound.isPlaying)
         {
