@@ -12,6 +12,10 @@ public class WaveSpawner : MonoBehaviour
 	public int waveCountRemaining = 10;
 	public int bossesPerLevel = 3;
 
+    public AudioSource levelUpSound;
+    public AudioSource musicPlayer;
+    public AudioClip[] songs;
+
 	void Start()
 	{
 		foreach (var wave in waves)
@@ -19,6 +23,7 @@ public class WaveSpawner : MonoBehaviour
 			wave.gameObject.SetActive(true);
 		}
 		StartCoroutine(SpawnWaves());
+        StartLevelMusic(5000);
 	}
 
 	private IEnumerator SpawnWaves()
@@ -47,11 +52,42 @@ public class WaveSpawner : MonoBehaviour
 				var boss = RunBossEncounter();
 				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
 				waveCountRemaining = 10;
-                currentLevel++;
+                NextLevel();
 			}
 			yield return new WaitForSeconds(timeBetweenWaves);
 		}
 	}
+
+    private void NextLevel()
+    {
+        currentLevel++;
+        StartCoroutine(FadeMusic());
+    }
+
+    private IEnumerator FadeMusic()
+    {
+        float startVolume = musicPlayer.volume;
+        float fadeTime = 3.0f;
+
+        while (musicPlayer.volume > 0)
+        {
+            musicPlayer.volume -= startVolume * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        musicPlayer.Stop();
+        musicPlayer.volume = startVolume;
+
+        levelUpSound.Play();
+        StartLevelMusic(72000);
+    }
+
+    private void StartLevelMusic(ulong delay)
+    {
+        musicPlayer.clip = songs[(currentLevel - 1) % songs.Length];
+        musicPlayer.Play(delay);
+    }
 
 	private Boss RunBossEncounter()
 	{
