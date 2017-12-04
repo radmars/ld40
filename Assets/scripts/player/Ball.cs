@@ -47,9 +47,9 @@ public class Ball : MonoBehaviour
 		// TODO THIS LOGIC IS PROBABLY WRONG
 		if (attached.Count > 0)
 		{
-			var scale = new Vector3(1, 1, 1) * attached.Count * scalePerBaddie;
+			var scale = new Vector3(1, 1, 1) * (1 + (attached.Count * scalePerBaddie)/100);
 			geometry.transform.localScale = scale;
-			collider.size = startingColliderSize + new Vector2(1, 1) * attached.Count * scalePerBaddie;
+			collider.size = startingColliderSize + new Vector2(1, 1) * (1 + (attached.Count * scalePerBaddie)/100);
 			body.mass = startingMass + attached.Count * massPerBaddie;
 		}
 		else
