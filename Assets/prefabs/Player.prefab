@@ -712,10 +712,12 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   massPerBaddie: 1
   scalePerBaddie: 1.1
+  comboText: {fileID: 0}
   geometry: {fileID: 1179206288550612}
   body: {fileID: 50010186518967380}
   collider: {fileID: 61193389507604760}
   boundary: {fileID: 61618708351463022}
+  startingMass: 1
 --- !u!114 &114709984878130222
 MonoBehaviour:
   m_ObjectHideFlags: 1

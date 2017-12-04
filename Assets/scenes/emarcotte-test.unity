@@ -572,22 +572,22 @@ Prefab:
     - target: {fileID: 224031823804106830, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2302.8157
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 224909690785685540, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2342.8157
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 224568559679967680, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -959.9999
+      value: -959.8036
       objectReference: {fileID: 0}
     - target: {fileID: 224568559679967680, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2342.8157
+      value: -540
       objectReference: {fileID: 0}
     - target: {fileID: 1418879145067186, guid: 90f77db789328c348bc032948596778f, type: 2}
       propertyPath: m_IsActive
@@ -596,6 +596,16 @@ Prefab:
     - target: {fileID: 1108504312297460, guid: 90f77db789328c348bc032948596778f, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224435279053148676, guid: 90f77db789328c348bc032948596778f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 959.8036
+      objectReference: {fileID: 0}
+    - target: {fileID: 224435279053148676, guid: 90f77db789328c348bc032948596778f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -540
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90f77db789328c348bc032948596778f, type: 2}
@@ -1490,6 +1500,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baddieToSpawn: {fileID: 1802403063}
   rate: 0
+--- !u!114 &331966537 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114698617793776522, guid: 90f77db789328c348bc032948596778f,
+    type: 2}
+  m_PrefabInternal: {fileID: 127702311}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &338115561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1654,11 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1012456102}
+    - target: {fileID: 114448660046451912, guid: 30e2b75bfacbd734a95eee15d04374e8,
+        type: 2}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 331966537}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30e2b75bfacbd734a95eee15d04374e8, type: 2}
   m_IsPrefabParent: 0

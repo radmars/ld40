@@ -11,6 +11,8 @@ public class Ball : MonoBehaviour
 	public float scalePerBaddie = 1.15f;
 	List<Baddie> attached;
 	long score = 0;
+    public Text comboText;
+    int combo = 0;
 	public GameObject geometry;
 	public Rigidbody2D body;
 	public new BoxCollider2D collider;
@@ -78,12 +80,6 @@ public class Ball : MonoBehaviour
 		transform.parent = null;
 	}
 
-	void UpdateScore()
-	{
-		score += (attached.Count * 14);
-		scoreText.text = score.ToString("d10");
-	}
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 
@@ -105,4 +101,11 @@ public class Ball : MonoBehaviour
 	{
 		yield return new WaitUntil(() => { return !Visible; });
 	}
+
+    void UpdateScore()
+    {
+        score += (attached.Count * 14);
+        scoreText.text = score.ToString("d10");
+        comboText.text = "COMBO x " + attached.Count;
+    }
 }
