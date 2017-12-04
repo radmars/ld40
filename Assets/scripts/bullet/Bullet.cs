@@ -26,6 +26,11 @@ public class Bullet : MonoBehaviour
         {
             player.lives--;
             player.SetLivesText();
+
+            if(player.lives == 0)
+            {
+                player.die();
+            }
         }
     }
 

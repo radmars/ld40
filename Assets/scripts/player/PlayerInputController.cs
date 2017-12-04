@@ -66,4 +66,9 @@ public class PlayerInputController : MonoBehaviour
 	{
 		livesText.text = "X " + lives;
 	}
+
+    public void die()
+    {
+        gameObject.SetActive(false);
+    }
 }
