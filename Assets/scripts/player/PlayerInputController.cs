@@ -69,6 +69,6 @@ public class PlayerInputController : MonoBehaviour
 
     public void die()
     {
-        gameObject.SetActive(false);
+       // gameObject.SetActive(false);
     }
 }

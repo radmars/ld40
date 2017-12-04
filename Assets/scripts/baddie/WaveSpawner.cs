@@ -47,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
 				var boss = RunBossEncounter();
 				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
 				waveCountRemaining = 10;
+                currentLevel++;
 			}
 			yield return new WaitForSeconds(timeBetweenWaves);
 		}
