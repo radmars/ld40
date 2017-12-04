@@ -23,6 +23,7 @@ public class Ball : MonoBehaviour
     public AudioSource attachSound;
     public AudioSource comboSound;
     public AudioSource pickupSound;
+    public AudioSource releaseSound;
 
 	public bool Visible { get; private set; }
 
@@ -86,6 +87,7 @@ public class Ball : MonoBehaviour
 		body.drag = 0;
 		transform.parent = null;
         tethered = false;
+        releaseSound.Play();
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
