@@ -27,6 +27,11 @@ public class Bullet : MonoBehaviour
             player.lives--;
             player.SetLivesText();
 
+			GameObject[] bullets = GameObject.FindGameObjectsWithTag ("bullet");
+			foreach (GameObject bullet in bullets) {
+				bullet.SetActive (false);
+			}
+
             if(player.lives == 0)
             {
                 player.die();
