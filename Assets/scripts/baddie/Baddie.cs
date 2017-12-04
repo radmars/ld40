@@ -36,7 +36,7 @@ public class Baddie : MonoBehaviour
 		}
 	}
 
-	public virtual void Attach()
+    public virtual void Attach()
 	{
 		var moveScript = Mover;
 		if (moveScript != null)
