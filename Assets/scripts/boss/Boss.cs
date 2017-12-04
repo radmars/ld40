@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour
 	{
 		if (collision.collider.gameObject == theBall.gameObject)
 		{
-			hitPoints--;
+			hitPoints -= Mathf.RoundToInt(theBall.body.mass * 10f);
 			healthSlider.value = hitPoints;
 
 			if (hitPoints <= 0 )

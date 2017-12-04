@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Nodes
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - 
-  - Bosses
+  - 
   - Baddies
   - Bullets
   - Player
