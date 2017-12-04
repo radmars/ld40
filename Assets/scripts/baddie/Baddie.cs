@@ -4,7 +4,7 @@
 public class Baddie : MonoBehaviour
 {
     public Ball theBall;
-
+    public bool isActive;
 	private RailMover mover;
 	public RailMover Mover
 	{
@@ -24,6 +24,7 @@ public class Baddie : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().simulated = true;
         Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), theBall.GetComponent<Collider2D>(), false);
+        isActive = true;
     }
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -42,7 +43,7 @@ public class Baddie : MonoBehaviour
 		{
 			moveScript.isStopped = true; ;
 		}
-
+        isActive = false;
         GetComponent<Rigidbody2D>().simulated = false;
         theBall.AttachBaddie(this);
 	}

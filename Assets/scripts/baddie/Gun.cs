@@ -16,7 +16,7 @@ public class Gun : Baddie
 
 	public void Update()
 	{
-		if (lastShot + .5 < Time.time)
+		if (lastShot + .5 < Time.time && isActive)
 		{
 			lastShot = Time.time;
 			Shoot();
