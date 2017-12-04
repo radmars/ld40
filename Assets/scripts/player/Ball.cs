@@ -54,6 +54,7 @@ public class Ball : MonoBehaviour
 		}
 		else
 		{
+            geometry.transform.localScale = startingColliderSize;
 			collider.size = startingColliderSize;
 			body.mass = startingMass;
 		}
@@ -71,7 +72,8 @@ public class Ball : MonoBehaviour
 		}
 		attached.Clear();
 		RecomputeSize();
-	}
+        UpdateScore();
+    }
 
 	public void Release(Vector3 push)
 	{
@@ -94,6 +96,10 @@ public class Ball : MonoBehaviour
 		if (collision == boundary)
 		{
 			Visible = false;
+            foreach(Baddie baddie in attached)
+            {
+                baddie.Freshen();
+            }
 		}
 	}
 
