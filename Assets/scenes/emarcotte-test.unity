@@ -1131,7 +1131,7 @@ Transform:
   m_GameObject: {fileID: 241349588}
   m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.04, z: 4}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a54fd061b9b4da4ebd122643cd0fa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.25
+  scrollSpeed: -0.025
 --- !u!33 &241349592
 MeshFilter:
   m_ObjectHideFlags: 0
