@@ -31,6 +31,10 @@ public class Bullet : MonoBehaviour
             {
                 player.die();
             }
+            else
+            {
+                player.hitSound.Play();
+            }
         }
 
         var ball = collision.transform.GetComponent<Ball>();

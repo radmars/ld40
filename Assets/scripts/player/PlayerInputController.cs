@@ -16,6 +16,8 @@ public class PlayerInputController : MonoBehaviour
 	public SpringJoint2D joint;
 	public float fireForce = 10;
 	private Vector3 ballStartingPosition;
+    public AudioSource deathSound;
+    public AudioSource hitSound;
 
 	// Use this for initialization
 	void Start()
@@ -69,6 +71,7 @@ public class PlayerInputController : MonoBehaviour
 
     public void die()
     {
+        deathSound.Play();
        // gameObject.SetActive(false);
     }
 }
