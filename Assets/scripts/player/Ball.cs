@@ -20,6 +20,9 @@ public class Ball : MonoBehaviour
 	public Collider2D boundary;
 	public float startingMass = 1;
 	private Vector2 startingColliderSize;
+    public AudioSource attachSound;
+    public AudioSource comboSound;
+    public AudioSource pickupSound;
 
 	public bool Visible { get; private set; }
 
@@ -36,6 +39,8 @@ public class Ball : MonoBehaviour
 		attached.Add(b);
 		b.transform.parent = transform;
 		b.transform.position = b.transform.position;
+
+        attachSound.Play();
 
 		RecomputeSize();
 		//TODO COME UP WITH REAL SCORING (Score based on pickups on number of baddies attacahed?)
@@ -113,5 +118,10 @@ public class Ball : MonoBehaviour
         score += (attached.Count * 14);
         scoreText.text = score.ToString("d10");
         comboText.text = "COMBO x " + attached.Count;
+
+        if (attached.Count > 0 && attached.Count % 5 == 0)
+        {
+            comboSound.Play();
+        }
     }
 }

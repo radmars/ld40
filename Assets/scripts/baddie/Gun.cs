@@ -8,6 +8,7 @@ public class Gun : Baddie
 	public Bullet bulletPrefab;
 	public PlayerInputController target;
 	public float lastShot = 0;
+    public AudioSource audioSource;
 
 	public override void Attach()
 	{
@@ -46,5 +47,8 @@ public class Gun : Baddie
 		{
 			bullet.direction = -(Vector3.up);
 		}
+
+        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        audioSource.Play();
 	}
 }

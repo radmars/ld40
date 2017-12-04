@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour
     public Text bossName;
     public Slider healthSlider;
 	public int startingHitPoints;
+    public AudioSource explosionSound;
 
 	protected List<Collider2D> weakSpots;
 
@@ -29,18 +30,30 @@ public class Boss : MonoBehaviour
 		{
 			hitPoints--;
 			healthSlider.value = hitPoints;
+
 			if (hitPoints <= 0 )
 			{
-				Die();
+                StartCoroutine(Die());
 			}
+            else
+            {
+                explosionSound.pitch = UnityEngine.Random.Range(1.4f, 2.5f);
+                explosionSound.Play();
+            }
 		}
 	}
 
-	public void Die()
+	private IEnumerator Die()
 	{
-		gameObject.SetActive(false);
-		healthSlider.gameObject.SetActive(false);
-		bossName.gameObject.SetActive(false);
+        explosionSound.pitch = 0.75f;
+        explosionSound.Play();
+        healthSlider.gameObject.SetActive(false);
+        bossName.gameObject.SetActive(false);
+        while (explosionSound.isPlaying)
+        {
+            yield return null;
+        }
+        gameObject.SetActive(false);
 	}
 
 	internal void StartAttack()

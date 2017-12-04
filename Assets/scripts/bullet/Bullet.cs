@@ -27,6 +27,12 @@ public class Bullet : MonoBehaviour
             player.lives--;
             player.SetLivesText();
         }
+
+        var ball = collision.transform.GetComponent<Ball>();
+        if (ball != null)
+        {
+            ball.pickupSound.Play();
+        }
     }
 
     public void Update()
