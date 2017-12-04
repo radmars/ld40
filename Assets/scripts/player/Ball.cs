@@ -80,6 +80,7 @@ public class Ball : MonoBehaviour
 		body.AddForce(new Vector3(push.x, push.y));
 		body.drag = 0;
 		transform.parent = null;
+        tethered = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -98,6 +99,7 @@ public class Ball : MonoBehaviour
 			Visible = false;
             foreach(Baddie baddie in attached)
             {
+                if(!tethered)
                 baddie.Freshen();
             }
 		}
