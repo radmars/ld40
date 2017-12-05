@@ -10,6 +10,7 @@ public class WaveSpawner : MonoBehaviour
 	public float timeBetweenWaves = 5f;
 
 	public static int currentLevel = 1;
+    private uint currentMusic = 0;
 	public int waveCountRemaining = 20;
 	public int bossesPerLevel = 3;
 
@@ -62,7 +63,10 @@ public class WaveSpawner : MonoBehaviour
     private void NextLevel()
     {
         currentLevel++;
-        StartCoroutine(FadeMusic());
+        if ((currentLevel - 1) % 3 == 0)
+        {
+            StartCoroutine(FadeMusic());
+        }
     }
 
     private IEnumerator FadeMusic()
@@ -86,7 +90,8 @@ public class WaveSpawner : MonoBehaviour
 
     private void StartLevelMusic(ulong delay)
     {
-        musicPlayer.clip = songs[(currentLevel - 1) % songs.Length];
+        musicPlayer.clip = songs[currentMusic % songs.Length];
+        currentMusic++;
         musicPlayer.Play(delay);
     }
 
@@ -94,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
 	{
 		var newBoss = bossPool.GetRandom();
 		newBoss.StartAttack();
-		newBoss.startingHitPoints = 60 + (currentLevel * 15);
+        newBoss.startingHitPoints = 60 + (currentLevel * 15);
 		return newBoss;
 	}
 
