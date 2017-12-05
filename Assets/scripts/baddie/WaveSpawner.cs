@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
 
 	public static int currentLevel = 1;
     private uint currentMusic = 0;
-	public int waveCountRemaining = 20;
+	public int waveCountRemaining = 10;
 	public int bossesPerLevel = 3;
 
     public AudioSource levelUpSound;
@@ -54,7 +54,7 @@ public class WaveSpawner : MonoBehaviour
 			{
 				var boss = RunBossEncounter();
 				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
-				waveCountRemaining = 15;
+				waveCountRemaining = 10;
                 NextLevel();
 			}
 			yield return new WaitForSeconds(timeBetweenWaves);

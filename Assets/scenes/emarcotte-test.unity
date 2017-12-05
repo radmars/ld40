@@ -5901,7 +5901,7 @@ MonoBehaviour:
   - {fileID: 388248435}
   - {fileID: 385530642}
   timeBetweenWaves: 5
-  waveCountRemaining: 5
+  waveCountRemaining: 10
   bossesPerLevel: 3
   levelUpSound: {fileID: 1538970596}
   musicPlayer: {fileID: 1538970595}
@@ -7466,12 +7466,12 @@ Prefab:
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 248
+      value: 511
       objectReference: {fileID: 0}
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 139.5
+      value: 287.5
       objectReference: {fileID: 0}
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
@@ -7556,7 +7556,7 @@ Prefab:
     - target: {fileID: 224568559679967680, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -353.07693
+      value: -325.05707
       objectReference: {fileID: 0}
     - target: {fileID: 224568559679967680, guid: 90f77db789328c348bc032948596778f,
         type: 2}
