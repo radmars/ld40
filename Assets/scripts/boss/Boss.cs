@@ -19,14 +19,17 @@ public class Boss : MonoBehaviour
     public BulletPool bulletPool;
     public Bullet bulletPrefab;
     public PlayerInputController target;
-    private float rateOfFire = 0.15f;
+    private float rateOfFire = 0.375f;
+    private float rateOfFireMin = 0.016666666f;
     public float lastShot = 0;
 
     private bool isActive = false;
-    private uint bulletWaveMax = 25;
+    private uint bulletWaveMax = 30;
+    private int bulletWavePause = 60;
     private uint bulletWaveCurrent = 0;
     private bool bulletFocus = true;
     private float sineScaler = 5.0f;
+    private float sineScaler2 = 5.0f;
 
     protected List<Collider2D> weakSpots;
 
@@ -78,7 +81,7 @@ public class Boss : MonoBehaviour
             else
             {
                 double progress = (double)(bulletWaveCurrent) / (double)(bulletWaveMax);
-                bullet.direction = new Vector3((float)Math.Sin(progress * sineScaler * Math.PI), (float)Math.Cos(progress * sineScaler - 1.0f * Math.PI), 0);
+                bullet.direction = new Vector3((float)Math.Sin(progress * sineScaler * Math.PI), (float)Math.Cos(progress * sineScaler2 - 1.0f * Math.PI), 0);
             }
         }
         else
@@ -126,7 +129,19 @@ public class Boss : MonoBehaviour
 
 	internal void StartAttack()
 	{
-		hitPoints = startingHitPoints;
+        bulletWaveCurrent = 0;
+        if (WaveSpawner.currentLevel > 1)
+        {
+            sineScaler = sineScaler + ((WaveSpawner.currentLevel - 1) * 0.5f);
+            sineScaler2 = sineScaler2 + ((WaveSpawner.currentLevel - 1) * 0.51f);
+        }
+        bulletWaveMax = bulletWaveMax + ((uint)WaveSpawner.currentLevel * 3);
+        bulletWavePause = bulletWavePause - (WaveSpawner.currentLevel * 3);
+        if (bulletWavePause < 0) bulletWavePause = 0;
+        rateOfFire = rateOfFire - (WaveSpawner.currentLevel * 0.015f);
+        if (rateOfFire < rateOfFireMin) rateOfFire = rateOfFireMin;
+
+        hitPoints = startingHitPoints;
         RefreshHealthBar();
 		StartCoroutine(SlideIn());
 	}
