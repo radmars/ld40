@@ -94,7 +94,7 @@ public class WaveSpawner : MonoBehaviour
 	{
 		var newBoss = bossPool.GetRandom();
 		newBoss.StartAttack();
-		newBoss.startingHitPoints = 40 + (currentLevel * 10);
+		newBoss.startingHitPoints = 60 + (currentLevel * 15);
 		return newBoss;
 	}
 

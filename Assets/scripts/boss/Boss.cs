@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     public BulletPool bulletPool;
     public Bullet bulletPrefab;
     public PlayerInputController target;
-    private float rateOfFire = 0.375f;
+    private float rateOfFire = 0.5f;
     private float rateOfFireMin = 0.016666666f;
     public float lastShot = 0;
 
@@ -151,7 +151,7 @@ public class Boss : MonoBehaviour
 		var start = new Vector3(0, 6, 0);
 		var end = new Vector3(0, 2.8f, 0);
 		float startTime = Time.time;
-		float slideTime = 10.0f;
+		float slideTime = 3.0f;
 
         yield return new WaitUntil(() =>
 		{
@@ -171,3 +171,4 @@ public class Boss : MonoBehaviour
         healthSlider.value = hitPoints;
     }
 }
+
