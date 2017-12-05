@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1058,6 +1058,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -0.025
+  materials:
+  - {fileID: 2100000, guid: 80001b84477a1ed45af27838ab20a961, type: 2}
+  - {fileID: 2100000, guid: 443ca62f10225be4584e0e27dee6620d, type: 2}
+  - {fileID: 2100000, guid: c7e2452687d7d194aa44a176f9377da2, type: 2}
 --- !u!33 &241349592
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5905,6 +5909,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2c90c5314cc7bac4ab7af643671b7226, type: 3}
   - {fileID: 8300000, guid: f964c5369265b7e4eb40da219cb1e641, type: 3}
   - {fileID: 8300000, guid: 3f25503e8945a934fbfb126b7a49b3cd, type: 3}
+  scroller: {fileID: 241349591}
 --- !u!4 &1538970594
 Transform:
   m_ObjectHideFlags: 0
@@ -7461,12 +7466,12 @@ Prefab:
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 512
+      value: 248
       objectReference: {fileID: 0}
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 384
+      value: 139.5
       objectReference: {fileID: 0}
     - target: {fileID: 224096840158685090, guid: 90f77db789328c348bc032948596778f,
         type: 2}
