@@ -17,6 +17,7 @@ public class WaveSpawner : MonoBehaviour
     public AudioSource levelUpSound;
     public AudioSource musicPlayer;
     public AudioClip[] songs;
+	public ParallaxScroller scroller;
 
 	void Start()
 	{
@@ -92,6 +93,7 @@ public class WaveSpawner : MonoBehaviour
     {
         musicPlayer.clip = songs[currentMusic % songs.Length];
         currentMusic++;
+		scroller.StartNewLevel();
         musicPlayer.Play(delay);
     }
 
