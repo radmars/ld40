@@ -19,7 +19,7 @@ public class PlayerInputController : MonoBehaviour
 	private Vector3 ballStartingPosition;
     public AudioSource deathSound;
     public AudioSource hitSound;
-    private float deathTimeInterval = 3.0f;
+    private float deathTimeInterval = 2.0f;
 
 	// Use this for initialization
 	void Start()
@@ -80,10 +80,13 @@ public class PlayerInputController : MonoBehaviour
     private IEnumerator doDeath() {
         planeGeometry.SetActive(false);
         GameObject death = GameObject.Find("Death Sound");
+        GameObject gameover = GameObject.Find("Gameover Sound");
         if (death)
         {
             AudioSource ds = death.GetComponent<AudioSource>();
+            AudioSource go = gameover.GetComponent<AudioSource>();
             ds.Play();
+            go.Play();
             yield return new WaitForSeconds(deathTimeInterval);
 
             SceneManager.LoadScene("splash-menu");
