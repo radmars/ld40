@@ -31,6 +31,32 @@ public class Boss : MonoBehaviour
     private float sineScaler = 5.0f;
     private float sineScaler2 = 5.0f;
 
+    private String[] bossFirstName =
+    {
+        "ATHRIZYX",
+        "CTHITHK",
+        "KLUH-LUH",
+        "GROSHKYK",
+        "KRYTHK",
+        "LAK-LAK",
+        "PAM",
+        "PRYZSHK",
+        "ZRAKK",
+        "YURK",
+        "SLYTHK",
+    };
+    private String[] bossTitles =
+    {
+        "THE EXISTENCE EATER",
+        "WHO DEATH FORGOT",
+        "THE OMEGA BLASTER",
+        "THE SOUL-EATER",
+        "HATER OF HUMANS",
+        "HOLDER OF THE DEATH-BAG",
+        "THE ANNILIHATOR",
+        "THE FINAL",
+    };
+
     protected List<Collider2D> weakSpots;
 
 	public void Start()
@@ -167,6 +193,9 @@ public class Boss : MonoBehaviour
     {
         healthSlider.gameObject.SetActive(true);
         bossName.gameObject.SetActive(true);
+        int random1 = (int)Mathf.Round(UnityEngine.Random.Range(0, bossFirstName.Length - 1));
+        int random2 = (int)Mathf.Round(UnityEngine.Random.Range(0, bossTitles.Length - 1));
+        bossName.text = bossFirstName[random1] + " " + bossTitles[random2];
         healthSlider.maxValue = startingHitPoints;
         healthSlider.value = hitPoints;
     }
