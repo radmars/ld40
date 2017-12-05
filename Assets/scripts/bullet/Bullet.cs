@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 				bullet.SetActive (false);
 			}
 
-            if(player.lives == 0)
+            if(player.lives <= 0)
             {
                 player.die();
             }
