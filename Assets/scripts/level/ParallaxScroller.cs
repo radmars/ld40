@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ParallaxScroller : MonoBehaviour
 {
 	public float scrollSpeed;
 	private Vector2 savedOffset;
 	private new Renderer renderer;
+	public Material []materials;
 
 	void Start()
 	{
@@ -22,5 +24,12 @@ public class ParallaxScroller : MonoBehaviour
 	void OnDisable()
 	{
 		renderer.material.SetTextureOffset("_MainTex", savedOffset);
+	}
+
+	internal void StartNewLevel()
+	{
+		int index = UnityEngine.Random.Range(0, materials.Length);
+		Debug.Log("Index: " + index);
+		renderer.material = materials[index];
 	}
 }
