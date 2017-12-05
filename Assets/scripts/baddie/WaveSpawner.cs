@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
 	public float timeBetweenWaves = 5f;
 
 	public static int currentLevel = 1;
-	public int waveCountRemaining = 10;
+	public int waveCountRemaining = 20;
 	public int bossesPerLevel = 3;
 
     public AudioSource levelUpSound;
@@ -52,7 +52,7 @@ public class WaveSpawner : MonoBehaviour
 			{
 				var boss = RunBossEncounter();
 				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
-				waveCountRemaining = 10;
+				waveCountRemaining = 20;
                 NextLevel();
 			}
 			yield return new WaitForSeconds(timeBetweenWaves);
