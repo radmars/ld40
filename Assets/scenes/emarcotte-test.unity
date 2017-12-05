@@ -4615,6 +4615,16 @@ Prefab:
       propertyPath: hitPoints
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 114770210448600784, guid: 6e7be2e33b7b454498418dae1ba6f6e1,
+        type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 930856305}
+    - target: {fileID: 114770210448600784, guid: 6e7be2e33b7b454498418dae1ba6f6e1,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 17331408}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e7be2e33b7b454498418dae1ba6f6e1, type: 2}
   m_IsPrefabParent: 0

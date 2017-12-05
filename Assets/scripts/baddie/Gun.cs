@@ -27,7 +27,9 @@ public class Gun : Baddie
 
 	public void Shoot()
 	{
-        if (this.Mover.finishedRoute)
+		rateOfFire = 2f * Mathf.Pow (.85f, (WaveSpawner.currentLevel-1));
+
+		if (this.Mover.finishedRoute)
         {
             this.gameObject.SetActive(false);
         }

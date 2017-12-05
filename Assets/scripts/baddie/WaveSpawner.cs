@@ -8,7 +8,8 @@ public class WaveSpawner : MonoBehaviour
 
 	public Wave[] waves;
 	public float timeBetweenWaves = 5f;
-	public int currentLevel = 1;
+
+	public static int currentLevel = 1;
 	public int waveCountRemaining = 10;
 	public int bossesPerLevel = 3;
 
