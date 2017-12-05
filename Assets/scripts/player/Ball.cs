@@ -15,15 +15,16 @@ public class Ball : MonoBehaviour
     int combo = 0;
 	public GameObject geometry;
 	public Rigidbody2D body;
-	public new BoxCollider2D collider;
+	public new CircleCollider2D collider;
 	private bool tethered = true;
 	public Collider2D boundary;
 	public float startingMass = 1;
-	private Vector2 startingColliderSize;
+	private float startingColliderSize;
     public AudioSource attachSound;
     public AudioSource comboSound;
     public AudioSource pickupSound;
     public AudioSource releaseSound;
+	private Vector3 startingScale;
 
 	public bool Visible { get; private set; }
 
@@ -31,7 +32,8 @@ public class Ball : MonoBehaviour
 	{
 		attached = new List<Baddie>();
 		UpdateScore();
-		startingColliderSize = collider.size;
+		startingColliderSize = collider.radius;
+		startingScale = geometry.transform.localScale;
 		RecomputeSize();
 	}
 
@@ -50,20 +52,10 @@ public class Ball : MonoBehaviour
 
 	private void RecomputeSize()
 	{
-		// TODO THIS LOGIC IS PROBABLY WRONG
-		if (attached.Count > 0)
-		{
-			var scale = new Vector3(1, 1, 1) * (1 + (attached.Count * scalePerBaddie)/100);
-			geometry.transform.localScale = scale;
-			collider.size = startingColliderSize + new Vector2(1, 1) * (1 + (attached.Count * scalePerBaddie)/100);
-			body.mass = startingMass + attached.Count * massPerBaddie;
-		}
-		else
-		{
-            geometry.transform.localScale = startingColliderSize;
-			collider.size = startingColliderSize;
-			body.mass = startingMass;
-		}
+		var scale = attached.Count * scalePerBaddie;
+		geometry.transform.localScale = startingScale + startingScale * scale;
+		collider.radius = startingColliderSize + startingColliderSize * scale;
+		body.mass = startingMass + attached.Count * massPerBaddie;
 	}
 
 	public void Tether(Vector3 position, Transform parent)
