@@ -70,7 +70,7 @@ public class PlayerInputController : MonoBehaviour
 
 	public void SetLivesText()
 	{
-		livesText.text = "X " + lives;
+		livesText.text = lives + "$";
 	}
 
     public void die()
