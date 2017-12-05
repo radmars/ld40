@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
@@ -54,7 +54,7 @@ public class WaveSpawner : MonoBehaviour
 			{
 				var boss = RunBossEncounter();
 				yield return new WaitUntil(() => { return !boss.gameObject.activeSelf; });
-				waveCountRemaining = 20;
+				waveCountRemaining = 15;
                 NextLevel();
 			}
 			yield return new WaitForSeconds(timeBetweenWaves);

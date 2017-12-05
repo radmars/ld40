@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     public BulletPool bulletPool;
     public Bullet bulletPrefab;
     public PlayerInputController target;
-    private float rateOfFire = 0.5f;
+    private float rateOfFire = 0.7f;
     private float rateOfFireMin = 0.016666666f;
     public float lastShot = 0;
 
@@ -164,8 +164,11 @@ public class Boss : MonoBehaviour
         bulletWaveMax = bulletWaveMax + ((uint)WaveSpawner.currentLevel * 3);
         bulletWavePause = bulletWavePause - (WaveSpawner.currentLevel * 3);
         if (bulletWavePause < 0) bulletWavePause = 0;
-        rateOfFire = rateOfFire - (WaveSpawner.currentLevel * 0.015f);
-        if (rateOfFire < rateOfFireMin) rateOfFire = rateOfFireMin;
+       
+		//rateOfFire = rateOfFire * (WaveSpawner.currentLevel * 0.015f);
+		rateOfFire = 0.7f * Mathf.Pow (.85f, (WaveSpawner.currentLevel-1));
+
+		if (rateOfFire < rateOfFireMin) rateOfFire = rateOfFireMin;
 
         hitPoints = startingHitPoints;
         RefreshHealthBar();
