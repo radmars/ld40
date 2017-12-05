@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerInputController : MonoBehaviour
@@ -18,6 +19,8 @@ public class PlayerInputController : MonoBehaviour
 	private Vector3 ballStartingPosition;
     public AudioSource deathSound;
     public AudioSource hitSound;
+    private float deathTime;
+    private float deathTimeInterval = 3.0f;
 
 	// Use this for initialization
 	void Start()
@@ -72,7 +75,24 @@ public class PlayerInputController : MonoBehaviour
 
     public void die()
     {
-        deathSound.Play();
-       // gameObject.SetActive(false);
+        StartCoroutine(doDeath());
+    }
+    
+    private IEnumerator doDeath() {
+        gameObject.SetActive(false);
+        GameObject death = GameObject.Find("Death Sound");
+        if (death)
+        {
+            AudioSource ds = death.GetComponent<AudioSource>();
+            ds.Play();
+            deathTime = Time.time + deathTimeInterval;
+            while (Time.time < deathTime)
+            {
+                yield return null;
+            }
+
+            SceneManager.LoadScene("splash-menu");
+        }
+
     }
 }
